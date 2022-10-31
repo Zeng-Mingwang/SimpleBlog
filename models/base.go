@@ -19,6 +19,7 @@ func Init() {
 	orm.RegisterModel(new(User), new(Category), new(Post), new(Config), new(Comment))
 }
 
+// 获取对应的表名，需要拼接上前缀
 func TableName(str string) string {
 	return beego.AppConfig.String("dbprefix") + str
 }
